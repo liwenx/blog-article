@@ -25,7 +25,8 @@ public class Article implements Serializable{
      * 主键
      */
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid",strategy = "uuid")
     @Column(name = "id")
     private String id;
 

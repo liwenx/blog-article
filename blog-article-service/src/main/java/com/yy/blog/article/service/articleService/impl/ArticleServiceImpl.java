@@ -1,5 +1,7 @@
 package com.yy.blog.article.service.articleService.impl;
 
+import com.yy.blog.article.commons.util.JsonUtil;
+import com.yy.blog.article.commons.util.PrimaryKeyUtil;
 import com.yy.blog.article.dao.article.ArticleDao;
 import com.yy.blog.article.domain.article.Article;
 import com.yy.blog.article.domain.article.query.ArticleQuery;
@@ -26,7 +28,8 @@ public class ArticleServiceImpl implements ArticleService{
     public void insertArticle(ArticleQuery articleQuery) {
         Article article = new Article();
         BeanUtils.copyProperties(articleQuery, article);
-        articleDao.save(article);
-        template.send("zjmTest", article.getId(), article);
+//        article.setId(PrimaryKeyUtil.getPrimaryKey());
+        article = articleDao.save(article);
+        template.send("zjmTest", article.getId(), JsonUtil.toJson(article));
     }
 }
