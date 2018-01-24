@@ -1,10 +1,11 @@
-package com.yy.blog.article.domain;
+package com.yy.blog.article.domain.article;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -15,13 +16,18 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "blog_article")
+@Entity
+@Table(name = "blog_article")
 public class Article implements Serializable{
     public static final long serialVersionUID = 1L;
 
     /**
      * 主键
      */
+    @Id
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid",strategy = "uuid")
+    @Column(name = "id")
     private String id;
 
     /**

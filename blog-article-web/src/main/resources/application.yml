@@ -47,11 +47,11 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     jpa:
       hibernate:
-        ddl-auto:
+        ddl-auto: update
       show-sql: true
-mybatis:
-  config-location: classpath:sqlmap/sqlmap-config.xml
+#mybatis:
+#  config-location: classpath:sqlmap/sqlmap-config.xml
 fdfs:
   soTimeout: 1500
   connectTimeout: 600
-  trackerList: 45.77.113.201:22122
+  trackerList: vps.liwx.xyz:22122
