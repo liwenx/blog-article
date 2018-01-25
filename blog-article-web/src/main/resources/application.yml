@@ -49,6 +49,15 @@ spring:
       hibernate:
         ddl-auto: update
       show-sql: true
+  dubbo:
+    application:
+      name: blog-article
+    registry:
+      address: zookeeper://112.74.40.100:2181
+    protocol:
+      name: dubbo
+      port: 20883
+    scan: com.yy.blog.article.controller
 #mybatis:
 #  config-location: classpath:sqlmap/sqlmap-config.xml
 fdfs:
