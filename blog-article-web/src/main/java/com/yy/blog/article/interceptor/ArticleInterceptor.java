@@ -2,6 +2,7 @@ package com.yy.blog.article.interceptor;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,6 +17,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @author zhengjm5
  * @date 2018/2/10 18:05
  */
+@Component
 public class ArticleInterceptor implements HandlerInterceptor {
 
     /**
